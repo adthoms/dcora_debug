@@ -1,0 +1,104 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "dcora-tests",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/dcora/build/bin/testDCORA",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/dcora/build/",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Explicitly load the binary",
+          "text": "file ${workspaceFolder}/dcora/build/bin/testDCORA",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build",
+      "logging": {
+        "trace": true,
+        "engineLogging": true,
+        "traceResponse": true,
+        "programOutput": true,
+        "exceptions": true
+      }
+    },
+    {
+      "name": "dcora-multi-robot-example",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/dcora/build/bin/multi-robot-example",
+      "args": [
+        5,
+        "../data/smallGrid3D.g2o"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/dcora/build/",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build"
+    },
+    {
+      "name": "dcora-multi-robot-example-ra-slam",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/dcora/build/bin/multi-robot-example-ra-slam",
+      "args": [
+        "../data/range_aided_slam_test_2d.pyfg"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/dcora/build/",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build"
+    },
+    {
+      "name": "dcora-single-robot-example-ra-slam",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/dcora/build/bin/single-robot-example-ra-slam",
+      "args": [
+        "../data/tiers.pyfg"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/dcora/build/",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build"
+    }
+  ]
+}
